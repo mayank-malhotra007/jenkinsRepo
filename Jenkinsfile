@@ -4,11 +4,17 @@ pipeline{
 
     stages{
 
-        stage("TestRun"){
+        stage("Build"){
             steps{
-                bat "echo a commit took happened!"
+                bat "echo build stage"
             }
         }
+        
+	stage("Test"){
+	   steps{
+		bat "echo Test stage"
+	   }
 
+	}
     }
 }
