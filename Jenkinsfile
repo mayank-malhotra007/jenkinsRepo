@@ -4,17 +4,10 @@ pipeline{
 
     stages{
 
-        stage("Build"){
+        stage("Main"){
             steps{
-                bat "echo build stage"
+                bat "echo in stage main"
             }
         }
-        
-	stage("Test"){
-	   steps{
-		bat "echo Test stage"
-	   }
-
-	}
     }
 }
