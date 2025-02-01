@@ -4,17 +4,11 @@ pipeline{
 
     stages{
 
-        stage("Build"){
+        stage("Feature"){
             steps{
-                bat "echo build stage"
+                bat "echo in feature"
             }
         }
-        
-	stage("Test"){
-	   steps{
-		bat "echo Test stage"
-	   }
-
-	}
+       
     }
 }
