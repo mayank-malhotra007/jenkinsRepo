@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    stages {
+        stage('Example') {
+            steps {
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                echo "Build tag is ${BUILD_TAG}"
+                echo "java home ${JAVA_HOME}"
+                echo "job name ${JOB_NAME}"
+            }
+        }
+    }
+}

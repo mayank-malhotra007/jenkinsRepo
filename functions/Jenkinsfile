@@ -1,0 +1,25 @@
+def myFunc(String text, int number) {
+    def myName = text
+    echo "text is: ${myName}"
+    echo "number is: ${number}"  // Now correctly printing the number
+}
+
+pipeline {
+    agent any
+
+    environment {
+        myNumber = "007"  // Environment variables must be strings
+    }
+
+    stages {
+        stage("Demo") {
+            steps {
+                script {
+                    //def myNumber = 123  // Corrected: Placed inside script block
+                    myFunc("mayank", myNumber)  // Pass the number to function
+                    echo "my number is: ${myNumber}"  // Local variable
+                }
+            }
+        }
+    }
+}
