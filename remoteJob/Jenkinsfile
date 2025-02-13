@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage("Build Remote") {
+            steps {
+                script {
+                    build job: "boolPipeline", 
+                          parameters: [booleanParam(name: 'deployEnv', value: true)]
+                }
+            }
+        }
+    }    
+}
